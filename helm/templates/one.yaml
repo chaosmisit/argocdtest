@@ -19,7 +19,6 @@ spec:
           host: argocd.machinelearning-models.com
       version: v3
   destination:
-    namespace: production
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
