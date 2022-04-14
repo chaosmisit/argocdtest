@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: simpleingressroute
+  namespace: traefik-test
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`machinelearning-models.com`)
+    kind: Rule
+    services:
+    - name: whoami-service
+      port: 80
