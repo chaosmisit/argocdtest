@@ -10,5 +10,5 @@ spec:
   - match: Host(`argocd.machinelearning-models.com`)
     kind: Rule
     services:
-    - name: whoami-service
+    - name: whoami2-service
       port: 80
