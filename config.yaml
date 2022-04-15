@@ -1,23 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: one
+  name: config
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    path: helm
-    repoURL: https://github.com/chaosmisit/argocdtest/tree/main/apps
+    path: argocdapps
+    repoURL: https://github.com/chaosmisit/argocdtest.git
     targetRevision: HEAD
-    helm:
-      values: |
-        image:
-          tag: latest
-        ingress:
-          host: argocd.machinelearning-models.com
-      version: v3
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:

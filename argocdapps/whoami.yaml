@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: one
+  name: whoami-app
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    path: helm
+    path: whoami
     repoURL: https://github.com/chaosmisit/argocdtest.git
     targetRevision: HEAD
   destination:
